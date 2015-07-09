@@ -1,0 +1,53 @@
+## JRO to prevent SAV/SWP
+# uses relative offset instead of basic 1/-1/0-commands
+# to control the push/popadd-node thus not requiring
+# an additional register nor save/swap
+
+@0
+
+
+@1
+MOV UP DOWN
+
+@2
+MOV UP ACC
+MOV ACC DOWN
+MOV ACC DOWN
+
+@3
+
+
+@4
+MOV UP ACC
+MOV ACC DOWN#-X
+COM:JRO RIGHT
+PUSH:MOV ACC LEFT
+JMP COM
+POPADD:ADD LEFT
+JMP COM
+FLUSH:MOV ACC DOWN
+
+@5
+START: MOV UP ACC
+PUSH: JEZ ADD
+ SUB 1 #SENDPUSH
+ MOV 1 LEFT
+ JMP PUSH
+ADD: MOV UP ACC
+POP: JEZ END
+ SUB 1 #SENDPOP
+ MOV 3 LEFT
+JMP POP
+END: MOV 5 LEFT#SF
+
+@6
+MOV UP ACC
+NEG
+ADD UP
+MOV ACC RIGHT
+
+@7
+MOV LEFT DOWN
+
+@8
+
