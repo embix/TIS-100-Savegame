@@ -1,0 +1,52 @@
+## save another 143 cycles (11%)
+
+@0
+
+
+@1
+
+
+@2
+
+
+@3
+
+
+@4
+
+
+@5
+MOV ACC DOWN
+ADD 1
+
+@6
+
+
+@7
+
+
+@8
+MOV 3 RIGHT
+MOV 0 RIGHT
+
+@9
+MOV 0, DOWN
+MOV UP, DOWN
+L: MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+   MOV LEFT,DOWN
+JRO RIGHT
+   MOV -1 DOWN
+   MOV LEFT, NIL
+
+@10
+MOV -10 LEFT
+MOV -10 LEFT
+MOV 1 LEFT
