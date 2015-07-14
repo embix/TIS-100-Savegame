@@ -1,3 +1,5 @@
+## finally got it working
+
 @0
 
 
@@ -25,14 +27,14 @@ L:MOV 1 DOWN#SX
   JNZ L
 
 @5
-MOV UP ACC#YS
-!SAV#BREAK
-MOV UP RIGHT#W
-MOV UP ACC#H
-L:SWP
+  MOV UP ACC#YS
+  SAV
+  MOV UP RIGHT#W
+  MOV UP ACC#H
+  SWP
   MOV ACC RIGHT#YS
   SWP
-  SUB 1
+L:SUB 1
   MOV 5 RIGHT#YC
   MOV 1 RIGHT#W
   JNZ L
@@ -52,8 +54,7 @@ Y:MOV ACC DOWN
   JMP C
 
 @7
-#CYCLECOUTER
-ADD 1
+
 
 @8
 COM: JRO UP
