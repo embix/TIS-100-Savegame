@@ -1,5 +1,3 @@
-## the idea (not working yet)
-
 @0
 
 
@@ -31,7 +29,8 @@ LINE:SUB 1
  MOV ACC LEFT
  SWP
  JNZ LINE
-#COMMAND
+MOV LEFT NIL
+MOV -3 RIGHT
 
 @5
 MOV LEFT UP#Y
